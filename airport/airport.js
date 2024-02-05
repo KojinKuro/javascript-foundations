@@ -10,7 +10,7 @@ function welcomeGuests(airport) {
 
 function landPlanes(airport, gateCount) {
   airport.availableGates -= gateCount;
-  
+
   if(!airport.overflow) airport.overflow = 0;
   if(airport.availableGates > 0 && airport.overflow === 0) {
     airport.message = `Success! Current availability is ${airport.availableGates}.`
@@ -24,14 +24,15 @@ function landPlanes(airport, gateCount) {
 }
 
 function checkAirlineLocations(airports, airline) {
-  let arrayOfAirlines = [];
-  for(let i=0; i < airports.length; ++i) {
-    if (airports[i].airlines.find((ar) => ar === airline)) {
-      arrayOfAirlines.push(airports[i].name);
-    }
-  }
+  let array = [];
 
-  return arrayOfAirlines
+  airports.map((airport) => {
+    if(airport.airlines.find((ar) => ar === airline)) {
+      array.push(airport.name);
+    }
+  });
+
+  return array;
 }
 
 module.exports = { 
