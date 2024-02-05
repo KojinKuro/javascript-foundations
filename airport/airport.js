@@ -25,7 +25,7 @@ function checkAirlineLocations(airports, airline) {
   let array = [];
 
   airports.map((airport) => {
-    if(airport.airlines.find((ar) => ar === airline)) {
+    if(airport.airlines.find((line) => line === airline)) {
       array.push(airport.name);
     }
   });
