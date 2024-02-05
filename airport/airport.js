@@ -1,5 +1,3 @@
-createAirport('Denver International Airport', ['United', 'Southwest', 'Delta'], 144)
-
 function createAirport(name, airlines, availableGates) {
   return { name, airlines, availableGates };
 }
