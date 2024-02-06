@@ -4,7 +4,7 @@ var { createMaterial, calculateMaterialCost, createSupplyCloset, addSupply, crea
 describe('Crafting', function() {
 
   describe('Material', function() {
-    it.skip('should create a new material', function() {
+    it('should create a new material', function() {
       var yarn = createMaterial('yarn', 'skein', 6.99);
 
       assert.equal(yarn.name, 'yarn');
@@ -12,7 +12,7 @@ describe('Crafting', function() {
       assert.equal(yarn.costPerUnit, 6.99);
     });
 
-    it.skip('should calculate cost of material', function() {
+    it('should calculate cost of material', function() {
       var fabric = createMaterial('fabric', 'yard', 12.50);
 
       var fabricCost = calculateMaterialCost(fabric, 4);
@@ -28,7 +28,7 @@ describe('Crafting', function() {
   });
 
   describe('Supply Closet', function() {
-    it.skip('should create a supply closet', function() {
+    it('should create a supply closet', function() {
       var fabric = createMaterial('fabric', 'yard', 12.50);
       var paint = createMaterial('paint', 'pint', 3.95);
       var yarn = createMaterial('yarn', 'skein', 6.99);
@@ -38,13 +38,13 @@ describe('Crafting', function() {
       assert.deepEqual(myCloset, { supplies: ['fabric', 'paint', 'yarn'] });
     });
 
-    it.skip('should be able to start empty', function() {
+    it('should be able to start empty', function() {
       var myCloset = createSupplyCloset();
 
       assert.deepEqual(myCloset, { supplies: [] });
     });
 
-    it.skip('should be able to add new supplies to the supply closet', function() {
+    it('should be able to add new supplies to the supply closet', function() {
       var glitter = createMaterial('glitter', 'ounce', .99);
       
       var myCloset = createSupplyCloset([glitter]);
@@ -56,7 +56,7 @@ describe('Crafting', function() {
       assert.deepEqual(updatedCloset, ['glitter', 'thread']);
     });
 
-    it.skip('should not allow you to add the same supply again', function() {
+    it('should not allow you to add the same supply again', function() {
       var fabric = createMaterial('fabric', 'yard', 12.50);
       var paint = createMaterial('paint', 'pint', 3.95);
 
