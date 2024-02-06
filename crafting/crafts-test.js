@@ -100,7 +100,7 @@ describe('Crafting', function() {
       assert.equal(check, 'Yay! You can start this project!');
     });
 
-    it.skip('should be able to see if you have the necessary supplies to start a project', function() {
+    it('should be able to see if you have the necessary supplies to start a project', function() {
       var string = createMaterial('warp string', 'yard', .49);
       var yarn = createMaterial('yarn', 'skein', 7.85);
 

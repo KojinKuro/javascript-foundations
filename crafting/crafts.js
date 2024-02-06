@@ -24,12 +24,16 @@ function createNewProject(materialsNeeded, status = 'not started') {
   return {materialsNeeded, status};
 }
 
-function compareMaterials(project, supplies) {
+function compareMaterials(project, closet) {
   const SUCCESS_MSG = 'Yay! You can start this project!';
   const FAILURE_MSG = 'Oh no! You need to go shopping before you can start this project!';
 
-  
-  return 
+  for(let i=0; i < project.materialsNeeded.length;++i) {
+    var nameSearch = project.materialsNeeded[i].name;
+    if(!closet.supplies.includes(nameSearch)) { return FAILURE_MSG; }
+  }
+
+  return SUCCESS_MSG;
 }
 
 module.exports = {
